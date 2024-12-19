@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <!-- Enlace a la fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #800080; /* Fondo morado oscuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            background-color: #f9f1ff; /* Fondo del formulario suave */
+        }
+
+        h1 {
+            color: #d78db2; /* Título en tono rosa suave */
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #d0a9f5; /* Borde suave rosa/morado */
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f4e1f5; /* Fondo suave rosado para los campos */
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #d78db2; /* Botón rosa */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c66c99; /* Hover en botón con un tono más oscuro */
+        }
+
+        .form-footer {
+            margin-top: 20px;
+        }
+
+        .form-footer a {
+            color: #7a4b8f; /* Link en tono morado claro */
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Regístrate</h1>
+        <form action="/auth/register" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Crear cuenta</button>
+        </form>
+        <div class="form-footer">
+            <p>¿Ya tienes una cuenta? <a href="/auth/login">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+</body>
+</html>

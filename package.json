@@ -1,0 +1,22 @@
+{
+  "name": "proyectoexpress",
+  "version": "1.0.0",
+  "description": "Proyecto de Recuperacion",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Mayte JL",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.9.1"
+  },
+  "keywords": []
+}

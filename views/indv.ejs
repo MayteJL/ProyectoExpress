@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo global */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #9b59b6; /* Fondo morado oscuro */
+            margin: 0;
+            padding: 20px;
+            color: #f8f0ff; /* Texto en blanco suave */
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto; /* Centrar la tabla */
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0bee7;
+        }
+
+        th {
+            background-color: #d76d77; /* Rosa suave */
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f8f0ff;
+        }
+
+        button {
+            background-color: #d76d77; /* Rosa suave */
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e74c3c; /* Rosa más fuerte */
+        }
+
+        /* Estilos del formulario */
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto; /* Centrar el formulario */
+        }
+
+        form label {
+            font-weight: 600;
+            margin-top: 10px;
+            display: block;
+            color: #9b59b6; /* Tono morado */
+        }
+
+        form input[type="text"], form input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #d76d77; /* Borde rosa */
+            border-radius: 8px;
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #6c4f9f; /* Morado oscuro */
+        }
+
+        form input[type="text"]:focus, form input[type="number"]:focus {
+            border-color: #9b59b6; /* Resaltar borde morado en foco */
+            outline: none;
+        }
+
+        form button {
+            background-color: #9b59b6; /* Morado fuerte */
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #8e44ad; /* Morado más oscuro */
+        }
+
+        /* Estilo de la tarjeta para la actualización del producto */
+        .update-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Botón de regreso */
+        .update-card button {
+            background-color: #f39c12; /* Amarillo suave */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .update-card button:hover {
+            background-color: #e67e22; /* Amarillo más fuerte */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Detalles del Producto</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <td><%= producto._id %></td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td><%= producto.nombre_producto %></td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td><%= producto.tipo %></td>
+        </tr>
+        <tr>
+            <th>Precio</th>
+            <td><%= producto.precio_unitario %></td>
+        </tr>
+    </table>
+
+    <div class="update-card">
+        <h1>Actualizar Producto</h1>
+        <form action="/productos/<%= producto._id %>?_method=PUT" method="POST">
+            <label for="precio">ID:</label>
+            <input type="number" id="id" name="id" value="<%= producto.id %>" required>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>" required>
+
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo" value="<%= producto.tipo %>" required>
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" value="<%= producto.precio %>" required>
+
+            <button type="submit">Actualizar Producto</button>
+        </form>
+    </div>
+
+    <div>
+        <button onclick="window.location.href='/productos'">Volver a la Lista de Productos</button>
+    </div>
+
+    <script>
+        // Alerta de confirmación para actualizar el producto
+        const updateForm = document.querySelector('form[action*="PUT"]');
+        if (updateForm) {
+            updateForm.addEventListener('submit', function() {
+                alert("Producto actualizado correctamente.");
+            });
+        }
+    </script>
+
+</body>
+</html>

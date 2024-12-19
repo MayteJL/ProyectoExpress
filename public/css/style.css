@@ -1,0 +1,137 @@
+/* Estilo global */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0e7ff; /* Fondo morado claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #4b4b4b; /* Texto gris oscuro para contraste */
+}
+
+h1 {
+    color: #6a1b9a; /* Morado oscuro */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #8e24aa; /* Color morado vibrante */
+    font-weight: 500;
+}
+
+a:hover {
+    color: #6a1b9a; /* Cambiar a un morado más oscuro al pasar el ratón */
+    text-decoration: underline;
+}
+
+table {
+    width: 85%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Fondo blanco para las tablas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #d1c4e9; /* Borde suave morado claro */
+}
+
+th {
+    background-color: #8e24aa; /* Morado vibrante en el encabezado */
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f3e5f5; /* Color suave para las filas al pasar el ratón */
+}
+
+button, .back-button {
+    background-color: #8e24aa; /* Botón morado vibrante */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .back-button:hover {
+    background-color: #6a1b9a; /* Botón más oscuro al pasar el ratón */
+}
+
+/* Estilo de la tarjeta del producto */
+.product-card {
+    border: 1px solid #d1c4e9; /* Borde suave morado claro */
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 480px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h2 {
+    margin: 0 0 10px;
+    color: #6a1b9a; /* Morado oscuro */
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.product-card p {
+    margin: 8px 0;
+    font-size: 17px;
+    color: #6a1b9a; /* Morado para el texto de los productos */
+}
+
+.product-card p strong {
+    color: #4b4b4b; /* Texto fuerte en gris oscuro */
+}
+
+.product-card .price {
+    font-size: 22px;
+    color: #ab47bc; /* Morado más suave para el precio */
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.product-card .category, .product-card .supplier {
+    background-color: #9c27b0; /* Morado medio */
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.product-card .description {
+    font-style: italic;
+    color: #7b1fa2; /* Morado más suave para las descripciones */
+    margin: 15px 0;
+    font-size: 15px;
+}
