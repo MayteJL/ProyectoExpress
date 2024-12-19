@@ -4,7 +4,7 @@
   "description": "Proyecto de Recuperacion",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "star": "node index.js"
   },
   "author": "Mayte JL",
   "license": "ISC",
