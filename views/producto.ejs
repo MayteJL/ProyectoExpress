@@ -10,7 +10,7 @@
             background-color: #6a0dad; /* Fondo morado */
             margin: 0;
             padding: 20px;
-            color: #fff; /* Texto blanco para mayor contraste */
+            color: #5c3535; /* Texto blanco para mayor contraste */
             text-align: center;
         }
 
@@ -127,9 +127,7 @@
 <body>
     
     <h1>Gestión de Productos</h1>
-
-    <div class="container add-product-container">
-        <form action="/producto/nuevo" method="POST">
+        <form action="/productos" method="POST">
             <label for="ID">ID:</label>
             <input type="number" id="ID" name="ID" required> <!-- Campo para ID -->
             
@@ -145,7 +143,6 @@
             <button type="submit">Agregar Producto</button>
         </form>
         
-    </div>
 
     <div class="container">
         <h2>Listado de Productos</h2>
